@@ -1,21 +1,62 @@
 #include "List_Doble.h"
 typedef int T;
-//template <class T>
+
+/**Pila
+ *
+ *
+ * \brief Clase que deefine Una pila
+ *
+ * Esta clase es una implementación básica de una pila
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 class Pila{
 public:
   dll_t<T>* pila;
 
+/** \brief Constructor por defecto
+  * 
+  * Este metodo instancia un objeto de la clase pila
+  */
   Pila(void);
 
+/** \brief _size
+  *
+  * \return int en el que se encuentra el numero de elementos en la cola
+  * 
+  */
   int _size(void);
 
-
+/** \brief top
+  *
+  * \return T dato que te permite ver el primer dato de la pila
+  * 
+  */
   T top(void);//getset
 
+/** \brief push
+  *
+  * \param T dato que es el dato a introducir en el tope de la pila
+  * 
+  */
   void push(T dato);
 
+/** \brief pop
+  *
+  * \return T dato qe se almacenaba en el tope de la pila
+  * 
+  */
   const T pop(void);
 
+/** \brief empty
+  *
+  * \return bool true si está vacía
+  * 
+  */
   bool empty(void);
 };
 

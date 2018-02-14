@@ -21,6 +21,11 @@ int main(){
     cout << KGRN <<  "_size() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
     cout << KRED << "_size() incorrecto size: " << dummy._size() << endl << RST <<  "-------------------------------------------------------" << endl;
+  dummy.resize(10);
+  if(dummy._size() == 10)
+    cout << KGRN <<  "resize() correcto" << endl << RST << "-------------------------------------------------------" << endl;
+  else
+    cout << KRED << "resize() incorrecto _size() " << dummy._size() << endl << RST <<  "-------------------------------------------------------" << endl;
   for(int i = 0; i < dummy._size(); i++){
     dummy.get(i) = i;
   }
@@ -29,23 +34,23 @@ int main(){
   else
     cout << KRED << "get() incorrecto dummy.get(3): " << dummy.get(3) << endl << RST << "-------------------------------------------------------" << endl;
   dummy.push(9);
-  if(dummy.get(0) == 9 &&  dummy._size() == 6)
+  if(dummy.get(0) == 9 &&  dummy._size() == 11)
     cout << KGRN << "push() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
-    cout << KRED << "push() incorrecto dummy.get(0) == 9: " << dummy.get(0) << "  dummy._size() == 6:" << dummy._size() << endl << RST << "-------------------------------------------------------" << endl;
+    cout << KRED << "push() incorrecto dummy.get(0) == 9: " << dummy.get(0) << "  dummy._size() == 11:" << dummy._size() << endl << RST << "-------------------------------------------------------" << endl;
   int temp = dummy.pop();
-  if(dummy._size() == 5 && temp == 9)
+  if(dummy._size() == 10 && temp == 9)
     cout << KGRN << "pop() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
-    cout << KRED << "pop() incorrecto dummy._size() == 5: " << dummy._size() << " temp == 9" << temp<< endl << RST << "-------------------------------------------------------" << endl;
+    cout << KRED << "pop() incorrecto dummy._size() == 10: " << dummy._size() << " temp == 9" << temp<< endl << RST << "-------------------------------------------------------" << endl;
   dummy.push_back(9);
-  if(dummy.get(dummy._size() - 1) == 9 &&  dummy._size() == 6)
+  if(dummy.get(dummy._size() - 1) == 9 &&  dummy._size() == 11)
     cout << KGRN << "push_back() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
     cout << KRED << "push_back() incorrecto dummy.get(dummy._size() - 1) == 9: " << dummy.get(dummy._size() - 1) << " dummy._size() == 6" << dummy._size() << endl << RST << "-------------------------------------------------------" << endl;
   temp = 0;
   temp = dummy.pop_back();
-  if(dummy._size() == 5 && temp == 9)
+  if(dummy._size() == 10 && temp == 9)
     cout << KGRN << "pop_back() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
     cout << KRED << "pop_back() incorrecto dummy._size() == 5" << dummy._size() << " temp == 9" << temp  << endl << RST << "-------------------------------------------------------" << endl;

@@ -1,18 +1,55 @@
 #include "List_Doble.h"
 
-//template <class T>
+/**
+ * \class Cola
+ *
+ *
+ * \brief Clase que deefine Una cola FIFO
+ *
+ * Esta clase es una implementación básica de las colas FIFO mediante una lista doblemente enlazada 
+ *
+ * \note Se podrían añadir muchos mas metodos pero tiene las funcionalidades básicas
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 class Cola{
 public:
-  dll_t<T>* cola;
+  dll_t<T>* cola; ///lista en la que se implementa la cola
 
+/** \brief Constructor por defecto
+  * 
+  * Este metodo instancia un objeto de la clase cola 
+  */
   Cola(void);
 
+/** \brief _size
+  *
+  * \return int en el que se encuentra el numero de elementos en la cola
+  * 
+  */
   int _size(void);
 
+/** \brief Push
+  * \param T dato dato de tipo predefinido que se quiere añadir a la cola
+  * 
+  */
   void push(T dato);
 
+/** \brief pop
+  * \return Dato del tipo T predefinido
+  * Este metodo elimina el primer elemento de la cola y retorna el dato que almacenaba
+  */
   T pop(void);
 
+/** \brief Vacío
+  * \return bool true si esta vacío
+  * 
+  * Este metodo indica si la cola está vacía o no
+  */
   bool empty(void);
 };
 

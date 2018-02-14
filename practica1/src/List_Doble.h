@@ -1,6 +1,20 @@
 #pragma once
 #include "Nodo.h"
 
+/**
+ * \class dll_t
+ *
+ *
+ * \brief Clase que deefine Una lista doblemente enlazada
+ *
+ * Esta clase es una implementación básica de una lista doblemente enlazada 
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 template <class T>
     class dll_t {
     private:
@@ -9,28 +23,68 @@ template <class T>
         int sz_;
 
     public:
+
+/** \brief constructor por defecto
+  * 
+  * Este merodo contruye una lista vacía
+  */
         dll_t(void);
    
+/** \brief Destructor por defecto
+  */
         virtual ~dll_t(void); 
 
+/** \brief insert tail
+  * \return inserta un nuevo nodo al final de la lista
+  */
 	      void insert_tail(dll_node_t<T>*);
 
+/** \brief insert head
+  * \return rInserta un nuevo nodo al inicio de la lista
+  */
         void insert_head(dll_node_t<T>*);
 
+/** \brief get head
+  * \return retorna y elimina el ultimo nodo de la lista
+  */
         dll_node_t<T>* extract_tail(void);
 
+/** \brief get head
+  * \return retorna y elimina el primer nodo de la lista
+  */
         dll_node_t<T>* extract_head(void);
 
+/** \brief get tail
+  * \return retorna un acceso al ultimo objeto nodo de la lista
+  */
         dll_node_t<T>* get_tail(void);
 
+/** \brief get head
+  * \return retorna un acceso al primer objeto nodo de la lista
+  */
         dll_node_t<T>* get_head(void);
 
+				
+/** \brief Vacío
+  * \return bool true si esta vacío
+  * 
+  * Este metodo indica si la cola está vacía o no
+  */
         bool empty(void);
 
+/** \brief Elimina un nodo
+  * Dado un puntero a un nodo en concreto, este es eliminado de la lista
+  */
         void remove(dll_node_t<T>*);
 
+/** \brief get size
+  * \return int numero de elementos en la lista
+  */
         int get_size(void);
 
+/** \brief write
+  * \return Escribe de manera formateada la lista en el ostream indicado
+  */
         ostream& write(ostream& os);
     };
 
