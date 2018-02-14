@@ -1,7 +1,7 @@
-#include "Vector.cpp"
-#include "List_Doble.cpp"
-#include "Pila.cpp"
-#include "Cola.cpp"
+#include "Vector.h"
+#include "List_Doble.h"
+#include "Pila.h"
+#include "Cola.h"
 #define RST  "\x1B[0m"
 #define KRED  "\x1B[31m"
 #define KGRN  "\x1B[32m"
@@ -16,7 +16,7 @@ int main(){
           "-------------------------------------------------------" << endl;
   //Unit testing de Vector----------------------------------------------------------------------------
   cout << "UNIT TESTING CLASE VECTOR:" << endl;
-  Vector<int> dummy = Vector<int>(5);
+  Vector/*<int>*/ dummy = Vector/*<int>*/(5);
   if(dummy._size() == 5)
     cout << KGRN <<  "_size() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
@@ -84,7 +84,7 @@ int main(){
 
   //Unit testing de Pila----------------------------------------------------------------------------
   cout << "UNIT TESTING CLASE Pila:" << endl;
-  Pila<int> dummypila =  Pila<int>();
+  Pila dummypila =  Pila();
   if(dummypila.empty() == true )
     cout << KGRN <<  "empty() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
@@ -96,23 +96,29 @@ int main(){
   else
     cout << KRED << "top() == 5 incorrecto : " << dummypila.top() <<  "-------------------------------------------------------" << endl;
   dummypila.pop();
-  if(dummypila.pop() == 5 )
-    cout << KGRN <<  "pop() correcto" << endl << RST << "-------------------------------------------------------" << endl;
+  dummypila.pop();
+  dummypila.push(4);
+  if(dummypila.pop() == 4 )
+    cout << KGRN <<  "pop() correcto." << endl << RST << "-------------------------------------------------------" << endl;
   else
-    cout << KRED << "pop() == 5 incorrecto : " << dummypila.pop() <<  "-------------------------------------------------------" << endl;
+    cout << KRED << "pop() == 4 incorrecto : " << /*dummypila.pop()*/"" <<  "-------------------------------------------------------" << endl;
+
 
   //Unit testing de Cola----------------------------------------------------------------------------
   cout << "UNIT TESTING CLASE Cola:" << endl;
-  Cola<int> dummycola =  Cola<int>();
+  Cola dummycola =  Cola();
   if(dummycola.empty() == true )
     cout << KGRN <<  "empty() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
     cout << KRED << "empty() == true incorrecto : " << dummycola.empty() <<  "-------------------------------------------------------" << endl;
   dummycola.push(3);
   dummycola.push(5);
-  dummycola.pop();
   if(dummycola.pop() == 3)
+    cout << KGRN <<  "push() correcto" << endl << RST << "-------------------------------------------------------" << endl;
+  else
+    cout << KRED << "push() incorrecto : " << /*dummycola.pop()*/"" <<  "-------------------------------------------------------" << endl;
+  if(dummycola.pop() == 5)
     cout << KGRN <<  "pop() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
-    cout << KRED << "pop() == 5 incorrecto : " << dummycola.pop() <<  "-------------------------------------------------------" << endl;
+    cout << KRED << "pop() == 5 incorrecto : " << /*dummycola.pop()*/"" <<  "-------------------------------------------------------" << endl;
 }
