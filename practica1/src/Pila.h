@@ -23,6 +23,7 @@ public:
   * Este metodo instancia un objeto de la clase pila
   */
   Pila(void);
+  Pila(const Pila& b);
 
 /** \brief _size
   *
@@ -63,6 +64,16 @@ public:
   //template <class T>
   Pila::Pila(void){
     pila = new dll_t<T>();
+  }
+
+  Pila::Pila(const Pila& b){
+    pila =new dll_t<T>();
+    dll_node_t<T>* temp;
+    temp = b.pila->get_head();
+    for(int i = 0; i < b.pila->get_size(); i++){
+       pila->insert_tail(new dll_node_t<T>(temp->get_data()));
+       temp = temp->get_next();
+    }
   }
 
   //template <class T>

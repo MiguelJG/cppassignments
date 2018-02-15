@@ -126,4 +126,23 @@ int main(){
     cout << KGRN <<  "pop() correcto" << endl << RST << "-------------------------------------------------------" << endl;
   else
     cout << KRED << "pop() == 5 incorrecto : " << /*dummycola.pop()*/"" <<  "-------------------------------------------------------" << endl;
+
+//Modificacion
+   cout << endl << "-----MODIFICACION-----" << endl;
+   Pila pilamod1 =  Pila();
+   pilamod1.push(5);
+   cout << "Push 5 y 6 en pila 1" << endl;
+   pilamod1.push(6);
+   cout << "Tamaño pila 1: " << pilamod1._size() << endl;
+   cout << "Se crea la pila 2" << endl;
+   Pila pilamod2 = Pila(pilamod1);
+   cout << "Tamaño pila 2: " << pilamod2._size() << endl;
+   int temp2 = pilamod2.pop();
+   cout << "Pop del dato en pila 2: " << temp2 << " Tamaño pila 2: " << pilamod2._size() << " Tamaño pila 1: " << pilamod1._size() << endl;
+   temp2 = pilamod1.pop();
+   cout << "Pop del dato en pila 1: " << temp2 << " Tamaño pila 2: " << pilamod2._size() << " Tamaño pila 1: " << pilamod1._size() << endl;
+   temp2 = pilamod2.pop();
+   cout << "Pop del dato en pila 2: " << temp2 << " Tamaño pila 2: " << pilamod2._size() << " Tamaño pila 1: " << pilamod1._size() << endl;
+   temp2 = pilamod1.pop();
+   cout << "Pop del dato en pila 1: " << temp2 << " Tamaño pila 2: " << pilamod2._size() << " Tamaño pila 1: " << pilamod1._size() << endl;
 }
