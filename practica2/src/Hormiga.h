@@ -2,38 +2,89 @@
 
 using namespace std;
 
-
-//onst int BLANCO = 0;
-//const int NEGRO = 1;
 const int NORTE = 1;
 const int ESTE = 2;
 const int SUR = 3;
 const int OESTE = 4;
 
+/**Hormiga
+ *
+ * \brief Clase que implementa los objetos hormiga que recorren la rejilla de la maquina de turin y su comportamiento
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 class Hormiga{
   int i;
   int j;
-  int dir; //1 N ^, 2 E >, 3 S v, 4 O <
+  int dir;
 public:
 
+  /** \brief Contructor por defecto
+    *
+    * Este metodo instancia una hormiga con sus valores por defecto
+    */
   Hormiga();
 
+  /** \brief Contructor
+    *  \param int i posicion i de la hormiga
+    *  \param int j posicion j de la hormiga
+    *  \param int dir direccion en la que se mueve la hormiga
+    * Este metodo instancia una hormiga con las diferentes valores pasado por parametro
+    */
   Hormiga(int i, int j, int dir);
 
+  /** \brief set_i
+    *
+    * |param  int i valor de la posicion i
+    */
   void set_i(int i);
 
+  /** \brief get_i
+    *
+    * \return int  valor de la posicion i
+    */
   int get_i();
 
+  /** \brief set_j
+    *
+    * |param  int j valor de la posicion j
+    */
   void set_j(int j);
 
+  /** \brief get_j
+    *
+    * \return int  valor de la posicion j
+    */
   int get_j();
 
+  /** \brief set_dir
+    *
+    * |param  int dir valor de la direccion
+    */
   void set_dir(int dir);
 
+  /** \brief get_dir
+    *
+    * \return int  valor de la direccion
+    */
   int get_dir();
 
+  /** \brief next_pos
+    *
+    * \return int  valor del color al que se ha actualizado la casilla en la que estaba
+    * \param int color Color de la casilla en la que está actualmente
+    * Este metodo se la pasa el color de una casilla y la hormiga, en funcion de este color, actualiza su estado (posicon y direccion) y Retorna
+    * el color al que se ha de modificar la casilla anterior
+    */
   int next_pos(int color);
-
+  /** \brief Write
+    *
+    * \return char  caracter que representa la direccion de la  hormiga
+    * Este metodo retorna el caracter que representa la direccion de la hormiga
+    */
   char write();
 };
 
@@ -66,12 +117,7 @@ int Hormiga::get_j(){
 }
 
 void Hormiga::set_dir(int dir){
-  /*if(dir < NORTE || dir > OESTE){
-    cout << "Direccion no valida, se asigna Norte" << endl;
-    this->dir = NORTE;
-  } else{*/
     this->dir = dir;
-  //}
 }
 
 int Hormiga::get_dir(){

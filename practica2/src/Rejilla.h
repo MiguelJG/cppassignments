@@ -10,46 +10,138 @@ using namespace std;
 const int BLANCO = 0;
 const int NEGRO = 1;
 
+/**Casilla
+ *
+ * \brief Clase que implementa las diferentes casillas del tablero para poder hacer una matriz escasa
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 class Casilla{
-  int color;//0 blanco| 1 negro
+  int color;
   int i;
   int j;
 public:
 
+  /** \brief Contructor por defecto
+    *
+    * Este metodo instancia una casilla con sus valores por defecto
+    */
   Casilla();
 
+  /** \brief Contructor
+    *  \param int i posicion i de la casilla
+    *  \param int j posicion j de la casillas
+    *  \param int color color de la casilla
+    * Este metodo muestra por la salida estandar el estado actual de la maquinas
+    */
   Casilla(int i, int j, int color);
 
+  /** \brief get_i
+    *
+    * \return int  valor de la posicion i
+    */
   int get_i();
 
+  /** \brief set_i
+    *
+    * |param return int i valor de la posicion i
+    */
   void set_i(int i);
 
+  /** \brief get_j
+    *
+    * \return int  valor de la posicion j
+    */
   int get_j();
 
+  /** \brief set_j
+    *
+    * |param return int j valor de la posicion j
+    */
   void set_j(int j);
 
+  /** \brief get_color
+    *
+    * \return int  color de la casilla
+    */
   int get_color();
 
+  /** \brief set_color
+    *
+    * \param return int color valor del color de la casilla
+    */
   void set_color(int color);
 };
 
+/**Rejilla
+ *
+ * \brief Clase que implementa la rejilla en la que se llevará a cabo la simulacion de la maquina de turing representada como una matriz escasa
+ *
+ * \author Miguel Jiménez Gomis
+ *
+ * Contact: alu0100970876@ull.edu.es
+ *
+ */
 class Rejilla{
   vector<Casilla> rejilla;
   int color_base;
-public:
 
-  Rejilla();
-
-  Rejilla(int color);
-
+  /** \brief set_color_base
+    *
+    * \param in color
+    * Establece el color base de la rejilla
+    */
   void set_color_base(int color);
 
+  /** \brief get_color_base
+    *
+    * \return int color
+    * Retorna el valor del color base de la rejilla
+    */
   int get_color_base();
+public:
 
+  /** \brief Contructor por defecto
+    *
+    * Este metodo instancia una rejill con sus valores por defecto
+    */
+  Rejilla();
+
+  /** \brief Contructor
+    *
+    * \param int colore
+    *  Este metodo instancia una rejilla con un color base determinado
+    */
+  Rejilla(int color);
+
+  /** \brief colorPos
+    *
+    * \param int i valor de la posicion i
+    * \param int j valor de la posicion j
+    * \return int color de la posicion
+    * Este metodo retorna el color de una posicion dad de la rejilla
+    */
   int colorPos(int i, int j);
 
+  /** \brief setPos
+    *
+    * \param int i valor de la posicion i
+    * \param int j valor de la posicion j
+    * \param int color de la posicion
+    * Este metodo establece el color de una posicion dad de la rejilla
+    */
   void setPos(int i, int j, int color);
 
+  /** \brief Write
+    *
+    * \param int i valor de la posicion i
+    * \param int j valor de la posicion j
+    * \return char* cadena de caracteres que representa la posicion indicada
+    * Este metodo retorna la cadena que representala posicon indicada
+    */
   char* write(int i, int j);
 };
 
