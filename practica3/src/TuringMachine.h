@@ -5,6 +5,7 @@
 #include "HormigaDDDD.h"
 #include "HormigaIIII.h"
 #include "HormigaIIDI.h"
+#include "HormigaIDDI.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
@@ -125,8 +126,9 @@ void TuringMachine::compute(bool debug){
 }
 
 void TuringMachine::set_hormigas(){
-  hormigas.push_back(new HormigaDIDI(-5,-5,NORTE));
-  hormigas.push_back(new HormigaDDDD(10,10,NORTE));
-  hormigas.push_back(new HormigaIIII(-10,-10,NORTE));
-  hormigas.push_back(new HormigaIIDI(5,5,NORTE));
+  hormigas.push_back(new HormigaIDDI(0, 0, NORTE));
+  hormigas.push_back(new HormigaDIDI(-5, -5, NORTE));
+  hormigas.push_back(new HormigaDDDD(10, 10, NORTE));
+  hormigas.push_back(new HormigaIIII(-10, -10, NORTE));
+  hormigas.push_back(new HormigaIIDI(5, 5, NORTE));
 }

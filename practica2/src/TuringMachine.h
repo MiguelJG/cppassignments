@@ -116,7 +116,7 @@ void TuringMachine::compute(bool debug){
     tablero.setPos(dummyi, dummyj, dummycolor);
   }
   if(debug)
-    usleep(25000);
+    usleep(500000);
 }
 
 void TuringMachine::set_hormigas(){

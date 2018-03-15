@@ -1,7 +1,7 @@
 CC=g++
 CXXFLAGS=-g -fpermissive
 
-OBJS =   main.o -lncurses
+OBJS =   main.o
 
 all: ${OBJS}
 	$(CC) $(CXXFLAGS) -o practica ${OBJS}
