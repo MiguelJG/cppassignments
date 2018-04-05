@@ -3,7 +3,7 @@
 #include <stdlib.h>     /* atof, atoi */
 #include <vector>
 
-#include "matricula.h"
+#include "DNI.h"
 #include "celda.h"
 #include "fDispersion.1.h"
 #include "fExploracion.1.h"
@@ -41,11 +41,11 @@ int main (int argc, char* argv[]){
         int     nBloques =  argv_to_int   (argv[2]);
         int     fDisper  =  argv_to_int   (argv[3]);
         int     fExplor  =  argv_to_int   (argv[4]);
-        Tabla<Matricula> T(nCeldas, nBloques, fDisper, fExplor);
+        Tabla<DNI> T(nCeldas, nBloques, fDisper, fExplor);
         double  factor   =  pedir_factor  ();
         int n = round(2 * factor * nCeldas * nBloques);
         srand(time(NULL));
-        std::vector<Matricula> banco;
+        std::vector<DNI> banco;
         banco.resize(n);
         for(int i = 0; i < (n / 2); i++){
             bool insertado = T.insertar(banco[i]);
@@ -78,7 +78,7 @@ int main (int argc, char* argv[]){
         std::cout   <<  "Busquedas:\n"     <<
                         "min:             " << bu_min << '\n' <<
                         "medio:           " << bu_total/nPruebas << '\n' <<
-                        "max:             " << bu_max << '\n'<< std::endl;
+                        "max:             " << bu_max << '\n'<< std::endl;                        
     }
 }
 
