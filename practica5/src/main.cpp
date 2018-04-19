@@ -12,7 +12,7 @@ int main (void){
     srand(time(NULL));
     int opcion = 0;
     do{
-        system("clear");
+        //system("clear");
         std::cout << "1 - Modo desmostración" << std::endl;
         std::cout << "2 - Modo estadística" << std::endl;
         std::cout << std::endl << ">> ";
@@ -20,7 +20,7 @@ int main (void){
     }while((opcion != 1) && (opcion != 2));
     // Modo demostración
     if (opcion == 1) {
-        system("clear");
+        //system("clear");
         std::cout << "~ Modo demostración ~" << std::endl << std::endl;
         int n, a;
         // Solicita parámetros ~~~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ int main (void){
     }
     // Modo estadística
     else{
-        system("clear");
+        //system("clear");
         std::cout << "~ Modo estadística ~" << std::endl << std::endl;
         int n, p;
         // Solicitar parametros ~~~~~~~~~~~~~~~~~~~~~~
